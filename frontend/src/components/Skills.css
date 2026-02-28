@@ -38,3 +38,74 @@
     max-width: 100%;
   }
 }
+.skills {
+  padding: 100px 8%;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00f5ff;
+}
+
+.skills-container {
+  max-width: 700px;
+  margin: 60px auto 0 auto;
+}
+
+.skill {
+  margin-bottom: 35px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 12px;
+  background: #1f2937;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #4f8cff, #00f5ff);
+  border-radius: 20px;
+}
+
+/* ===== MOBILE SKILLS ===== */
+@media (max-width: 768px) {
+
+  .skills {
+    padding: 80px 5%;
+  }
+
+  .skills h2 {
+    font-size: 2rem;
+  }
+
+}
+.skills {
+  padding: 100px 8%;
+}
+
+.skills h2 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.skill-bar {
+  background: var(--card-bg);
+}
+
+.skill-progress {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    #3b82f6
+  );
+}

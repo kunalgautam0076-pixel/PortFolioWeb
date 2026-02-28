@@ -1,0 +1,350 @@
+/* ================= HERO SECTION ================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+  position: relative;
+}
+
+/* ================= CONTENT ================= */
+
+.hero-content {
+  max-width: 600px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  text-align: left;
+}
+
+/* ================= TEXT ================= */
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero span {
+  color: #3b82f6;
+}
+
+.hero h2 {
+  margin: 15px 0;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #cbd5e1;
+}
+
+.hero p {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero .btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero .btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Primary Button */
+.primary {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+}
+
+.primary:hover {
+  background: #2563eb;
+}
+
+/* Secondary Button */
+.secondary {
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  background: transparent;
+}
+
+.secondary:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= TYPEWRITER ================= */
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 3px solid #3b82f6;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(25, end) forwards,
+             blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 0 6%;
+  }
+
+  .hero-content {
+    max-width: 500px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .typewriter {
+    white-space: normal;
+    border-right: none;
+    animation: none;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    gap: 15px;
+  }
+}
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: clamp(20px, 8vw, 120px);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  text-align: left;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #3b82f6;
+  width: 0;
+  animation: typing 3s steps(21) forwards,
+             blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 21ch; }   /* character count */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  padding-top: 80px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero span {
+  color: #00f5ff;
+}
+
+.hero h2 {
+  margin: 15px 0;
+  color: #cbd5e1;
+}
+
+.hero p {
+  margin-bottom: 30px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.primary {
+  background: #4f8cff;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #4f8cff;
+  color: #4f8cff;
+}
+
+.primary:hover {
+  background: #2563eb;
+}
+
+.secondary:hover {
+  background: #4f8cff;
+  color: white;
+}
+
+/* ===== MOBILE HERO ===== */
+@media (max-width: 768px) {
+
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 100px 5% 0 5%;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  padding-top: 100px;
+}
+
+.hero span {
+  color: var(--primary-color);
+}
+
+.hero h2 {
+  color: var(--secondary-text);
+}
+
+.hero p {
+  color: var(--secondary-text);
+}
+
+.primary {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.secondary {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.secondary:hover {
+  background: var(--primary-color);
+  color: white;
+}
