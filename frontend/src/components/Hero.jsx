@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="hero-bg">
         <Antigravity
           count={250}
-          color="#093ca9"
+          color="#4f8cff"
           autoAnimate
         />
       </div>
