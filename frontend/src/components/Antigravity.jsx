@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { EffectComposer, Bloom, Noise } from "@react-three/postprocessing";
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -91,7 +92,7 @@ const AntigravityInner = ({
       destY = Math.cos(time * 0.5 * 2) * (v.height / 4);
     }
 
-    const smoothFactor = 0.05;
+    const smoothFactor = 0.07;
     virtualMouse.current.x += (destX - virtualMouse.current.x) * smoothFactor;
     virtualMouse.current.y += (destY - virtualMouse.current.y) * smoothFactor;
 
@@ -99,6 +100,8 @@ const AntigravityInner = ({
     const targetY = virtualMouse.current.y;
 
     const globalRotation = state.clock.getElapsedTime() * rotationSpeed;
+    const time = state.clock.getElapsedTime();
+const energyPulse = Math.sin(time * 1.5) * 0.3;
 
     particles.forEach((particle, i) => {
       let { t, speed, mx, my, mz, cz, randomRadiusOffset } = particle;
@@ -113,7 +116,11 @@ const AntigravityInner = ({
       const dy = my - projectedTargetY;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
-      let targetPos = { x: mx, y: my, z: mz * depthFactor };
+      let targetPos = { 
+  x: mx, 
+  y: my, 
+  z: mz * depthFactor + depthWave * 0.2 
+};
 
       if (dist < magnetRadius) {
         const angle = Math.atan2(dy, dx) + globalRotation;
@@ -146,7 +153,11 @@ const AntigravityInner = ({
 
       scaleFactor = Math.max(0, Math.min(1, scaleFactor));
 
-      const finalScale = scaleFactor * (0.8 + Math.sin(t * pulseSpeed) * 0.2 * particleVariance) * particleSize;
+     const finalScale =
+  scaleFactor *
+  (0.8 + Math.sin(t * pulseSpeed) * 0.2 * particleVariance) *
+  particleSize +
+  energyPulse;  
       dummy.scale.set(finalScale, finalScale, finalScale);
 
       dummy.updateMatrix();
@@ -163,15 +174,50 @@ const AntigravityInner = ({
       {particleShape === 'sphere' && <sphereGeometry args={[0.2, 16, 16]} />}
       {particleShape === 'box' && <boxGeometry args={[0.3, 0.3, 0.3]} />}
       {particleShape === 'tetrahedron' && <tetrahedronGeometry args={[0.3]} />}
-      <meshBasicMaterial color={color} />
+      <meshStandardMaterial
+  color={color}
+  emissive={color}
+  emissiveIntensity={1.5}
+  roughness={0.2}
+  metalness={0.6}
+  transparent
+  opacity={0.9}
+/>
     </instancedMesh>
   );
 };
 
-const Antigravity = props => {
+const Antigravity = (props) => {
   return (
-    <Canvas camera={{ position: [0, 0, 50], fov: 35 }}>
+    <Canvas
+      camera={{ position: [0, 0, 40], fov: 42 }}
+      dpr={[1, 2]}
+      style={{
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+      }}
+      gl={{ antialias: true, alpha: true }}
+    >
+      {/* Soft ambient light */}
+      <ambientLight intensity={0.6} />
+
+      {/* Subtle point light for glow depth */}
+      <pointLight position={[0, 0, 20]} intensity={1.5} />
+
       <AntigravityInner {...props} />
+
+      {/* FUTURISTIC EFFECTS */}
+      <EffectComposer>
+        <Bloom
+          intensity={1.3}
+          luminanceThreshold={0.2}
+          luminanceSmoothing={0.9}
+          mipmapBlur
+        />
+        <Noise opacity={0.02} />
+      </EffectComposer>
     </Canvas>
   );
 };
