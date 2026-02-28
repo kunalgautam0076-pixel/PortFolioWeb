@@ -102,7 +102,7 @@ const AntigravityInner = ({
     const globalRotation = state.clock.getElapsedTime() * rotationSpeed;
     const time = state.clock.getElapsedTime();
 const energyPulse = Math.sin(time * 1.5) * 0.3;
-const depthWave = Math.sin(time * 0.4) * 2;
+const depthWave = Math.sin(time * 0.4) * 2
 
     particles.forEach((particle, i) => {
       let { t, speed, mx, my, mz, cz, randomRadiusOffset } = particle;

@@ -84,7 +84,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #0c1229;
+  
   z-index: 1000;
 }
 
@@ -129,7 +129,7 @@
     top: 70px;
     right: -100%;
     flex-direction: column;
-    background: #0c1229;
+    
     width: 200px;
     padding: 20px;
     gap: 20px;
@@ -246,4 +246,117 @@
   .nav-links.active {
     right: 20px;
   }
+}
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+
+/* Scroll Effect */
+.navbar.scrolled {
+  background: rgba(10, 10, 25, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary-color);
+}
+
+/* Right Controls */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  color: var(--primary-color);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background: var(--nav-bg);
+    padding: 25px;
+    border-radius: 12px;
+    width: 220px;
+    gap: 20px;
+    transition: 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 20px;
+  }
+}
+:root .navbar {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+[data-theme="dark"] .navbar {
+  background: rgba(7, 11, 29, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 245, 255, 0.08);
+}
+
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(7, 11, 29, 0.9);
 }

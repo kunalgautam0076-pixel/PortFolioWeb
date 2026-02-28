@@ -1,24 +1,31 @@
 import { useState, useEffect } from "react";
+import {
+  FaHome,
+  FaUser,
+  FaCode,
+  FaProjectDiagram,
+  FaEnvelope,
+  FaSun,
+  FaMoon,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [theme, setTheme] = useState("dark");
+  const [scrolled, setScrolled] = useState(false);
 
-  /* ================= THEME LOAD ================= */
+  /* THEME LOAD */
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    setTheme(savedTheme);
+    document.documentElement.setAttribute("data-theme", savedTheme);
   }, []);
 
-  /* ================= THEME TOGGLE ================= */
+  /* THEME TOGGLE */
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
@@ -26,13 +33,14 @@ const Navbar = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  /* ================= ACTIVE SCROLL ================= */
+  /* SCROLL ACTIVE + NAV BACKGROUND */
   useEffect(() => {
     const sections = document.querySelectorAll("section");
 
     const handleScroll = () => {
-      let current = "";
+      setScrolled(window.scrollY > 50);
 
+      let current = "";
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         if (window.scrollY >= sectionTop - 150) {
@@ -44,12 +52,11 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo">Kunal.</div>
 
       <ul className={menuOpen ? "nav-links active" : "nav-links"}>
@@ -59,7 +66,7 @@ const Navbar = () => {
             className={active === "home" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
-            Home
+            <FaHome /> Home
           </a>
         </li>
 
@@ -69,7 +76,7 @@ const Navbar = () => {
             className={active === "about" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
-            About
+            <FaUser /> About
           </a>
         </li>
 
@@ -79,7 +86,7 @@ const Navbar = () => {
             className={active === "skills" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
-            Skills
+            <FaCode /> Skills
           </a>
         </li>
 
@@ -89,7 +96,7 @@ const Navbar = () => {
             className={active === "projects" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
-            Projects
+            <FaProjectDiagram /> Projects
           </a>
         </li>
 
@@ -99,22 +106,18 @@ const Navbar = () => {
             className={active === "contact" ? "active" : ""}
             onClick={() => setMenuOpen(false)}
           >
-            Contact
+            <FaEnvelope /> Contact
           </a>
         </li>
       </ul>
 
-      {/* Right Side Controls */}
       <div className="nav-right">
         <div className="theme-toggle" onClick={toggleTheme}>
-          {theme === "dark" ? "☀️" : "🌙"}
+          {theme === "dark" ? <FaSun /> : <FaMoon />}
         </div>
 
-        <div
-          className="hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
     </nav>

@@ -5,3 +5,10 @@
   color: #cbd5e1;
   line-height: 1.7;
 }
+.section p {
+  color: var(--secondary-text);
+}
+
+.section h2 {
+  color: var(--text-color);
+}

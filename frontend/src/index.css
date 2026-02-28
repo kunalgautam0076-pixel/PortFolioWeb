@@ -192,3 +192,90 @@ body {
   );
   pointer-events: none;
 }
+/* ================= LIGHT MODE ================= */
+:root {
+  --bg-color: #f5f7fb;
+  --text-color: #111827;
+  --secondary-text: #4b5563;
+  --primary-color: #2563eb;
+  --card-bg: #ffffff;
+  --nav-bg: rgba(255,255,255,0.8);
+}
+
+/* Clean subtle gradient */
+:root body {
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #eef2f7 50%,
+    #e5eaf1 100%
+  );
+}
+/* ================= GLOBAL BACKGROUND ================= */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* LIGHT MODE FULL PAGE SMOOTH */
+:root body {
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #eef2f7 40%,
+    #e6edf5 100%
+  );
+}
+
+/* DARK MODE FULL PAGE SMOOTH */
+/* DARK MODE FULL PAGE BACKGROUND */
+[data-theme="dark"] body {
+  background: linear-gradient(
+    180deg,
+    #050814 0%,
+    #0b1224 40%,
+    #0f1a35 100%
+  );
+}
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(0, 245, 255, 0.05),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+/* ================= DARK MODE FIX ================= */
+
+[data-theme="dark"] {
+  --bg-color: #070b1d;
+  --text-color: #ffffff;
+  --secondary-text: #94a3b8;
+  --primary-color: #00f5ff;
+  --card-bg: #0c1229;
+  --nav-bg: rgba(7, 11, 29, 0.7);
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(
+    180deg,
+    #060a1a 0%,
+    #0b1226 40%,
+    #0f1a35 100%
+  );
+}
+[data-theme="dark"] {
+  --card-bg: #0c1229;
+}
+:root {
+  --card-bg: #ffffff;
+}
