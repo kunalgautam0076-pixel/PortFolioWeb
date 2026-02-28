@@ -279,3 +279,14 @@ body {
 :root {
   --card-bg: #ffffff;
 }
+[data-theme="dark"] .skill-card {
+  background: #0c1229 !important;
+}
+[data-theme="dark"] .skill-card {
+  background: linear-gradient(
+    145deg,
+    #0c1229,
+    #101b3d
+  );
+  box-shadow: 0 15px 40px rgba(0, 245, 255, 0.08);
+}

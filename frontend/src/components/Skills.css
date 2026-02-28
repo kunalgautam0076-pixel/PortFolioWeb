@@ -164,3 +164,23 @@
 .skill-card p {
   color: var(--secondary-text);
 }
+
+/* ================= SKILL CARD ================= */
+
+.skill-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.skill-card h3 {
+  color: var(--text-color);
+}
+
+.skill-card p {
+  color: var(--secondary-text);
+}
