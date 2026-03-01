@@ -1,6 +1,7 @@
 import "./Projects.css";
 import foodImg from "../assets/food.jpg";
 import ecommerceImg from "../assets/ecommerce.jpg";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
 
@@ -28,7 +29,7 @@ const Projects = () => {
 
   return (
     <section className="section" id="projects">
-      <h2>Projects</h2>
+      <h2 className="section-title">Projects</h2>
 
       <div className="projects-grid">
 
@@ -39,12 +40,29 @@ const Projects = () => {
           onMouseLeave={(e) => resetCard(e.currentTarget)}
         >
           <img src={foodImg} alt="Food App" />
+
           <div className="overlay">
             <h3>Food Delivery App</h3>
             <p>MERN stack app with payment & admin dashboard.</p>
+
             <div className="buttons">
-              <a href="#">Live</a>
-              <a href="#">Code</a>
+              <a
+                href="https://your-live-link.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="live-btn"
+              >
+                <FaExternalLinkAlt /> Live
+              </a>
+
+              <a
+                href="https://github.com/kunalgautam0076-pixel/PortFolioWeb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="code-btn"
+              >
+                <FaGithub /> Code
+              </a>
             </div>
           </div>
         </div>
@@ -56,12 +74,29 @@ const Projects = () => {
           onMouseLeave={(e) => resetCard(e.currentTarget)}
         >
           <img src={ecommerceImg} alt="Ecommerce" />
+
           <div className="overlay">
             <h3>E-commerce Website</h3>
             <p>Shopping platform with cart & authentication.</p>
+
             <div className="buttons">
-              <a href="#">Live</a>
-              <a href="#">Code</a>
+              <a
+                href="https://your-live-link.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="live-btn"
+              >
+                <FaExternalLinkAlt /> Live
+              </a>
+
+              <a
+                href="https://github.com/yourusername/ecommerce-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="code-btn"
+              >
+                <FaGithub /> Code
+              </a>
             </div>
           </div>
         </div>

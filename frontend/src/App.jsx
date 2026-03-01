@@ -7,7 +7,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import ScrollTop from "./components/ScrollTop";
+
 import CustomCursor from "./components/CustomCursor";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
-      <ScrollTop />
+    
       <CustomCursor />
     </>
   );
