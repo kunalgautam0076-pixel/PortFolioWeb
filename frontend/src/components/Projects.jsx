@@ -1,6 +1,6 @@
 import "./Projects.css";
-import foodImg from "../assets/food.jpg";
-import ecommerceImg from "../assets/ecommerce.jpg";
+import foodImg from "../assets/food.png";
+import ecommerceImg from "../assets/ecommerce.jpeg";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
@@ -76,8 +76,8 @@ const Projects = () => {
           <img src={ecommerceImg} alt="Ecommerce" />
 
           <div className="overlay">
-            <h3>E-commerce Website</h3>
-            <p>Shopping platform with cart & authentication.</p>
+            <h3>My PortFolio</h3>
+            <p>Its My PortFolio.</p>
 
             <div className="buttons">
               <a

@@ -253,3 +253,105 @@ html, body {
   max-width: 100%;
   overflow: hidden;
 }
+/* ================= MOBILE VIEW FIX ================= */
+@media (max-width: 768px) {
+
+  /* Section padding fix */
+  #about {
+    padding: 70px 20px;
+  }
+
+  /* Title center and spacing */
+  .about-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* Who I Am text fix */
+  .about-left {
+    width: 100%;
+    text-align: left;
+  }
+
+  .about-left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .about-left p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Timeline full width */
+  .timeline {
+    margin-top: 40px;
+    padding-left: 0;
+  }
+
+  /* Remove vertical center alignment */
+  .timeline::before {
+    left: 10px;   /* move line slightly left */
+  }
+
+  /* Timeline items */
+  .timeline-item {
+    width: 100%;
+    padding-left: 35px;
+    margin-bottom: 30px;
+  }
+
+  /* Timeline dot */
+  .timeline-item::before {
+    left: 0;
+  }
+
+  /* Card Fix */
+  .timeline-content {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  /* Education card title */
+  .timeline-content h4 {
+    font-size: 1rem;
+  }
+
+  /* Badge fix */
+  .badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+}
+
+/* ===== MOBILE EDUCATION CARD FIX ===== */
+@media (max-width: 768px) {
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  /* Title + Date vertical stack */
+  .timeline-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* Date below title */
+  .timeline-date {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  /* Prevent text overflow */
+  .timeline-content h4 {
+    font-size: 1rem;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+}

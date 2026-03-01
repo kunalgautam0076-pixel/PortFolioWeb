@@ -45,7 +45,7 @@ const About = () => {
             </div>
             <p><FaUniversity /> SB Jain Institute of Technology</p>
             <p><FaMapMarkerAlt /> Nagpur</p>
-            <div className="badge">CGPA: 8.8 / 10</div>
+            <div className="badge">CGPA: 7.5 / 10</div>
           </div>
 
           {/* Card 2 */}
@@ -54,9 +54,9 @@ const About = () => {
               <h4>Higher Secondary Certificate (12th)</h4>
               <span><FaCalendarAlt /> 2020 - 2022</span>
             </div>
-            <p><FaUniversity /> Bharti Krishna Vidya Vihar</p>
+            <p><FaUniversity />C.P & Berar College</p>
             <p><FaMapMarkerAlt /> Nagpur</p>
-            <div className="badge">Percentage: 71%</div>
+            <div className="badge">Percentage: 81%</div>
           </div>
 
           {/* Card 3 */}
@@ -65,9 +65,9 @@ const About = () => {
               <h4>Secondary School Certificate (10th)</h4>
               <span><FaCalendarAlt /> 2019 - 2020</span>
             </div>
-            <p><FaUniversity /> Bharti Krishna Vidya Vihar</p>
+            <p><FaUniversity /> AngelKids Convent</p>
             <p><FaMapMarkerAlt /> Nagpur</p>
-            <div className="badge">Percentage: 76%</div>
+            <div className="badge">Percentage: 67%</div>
           </div>
 
         </div>
