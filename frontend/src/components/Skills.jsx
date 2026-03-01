@@ -55,9 +55,9 @@ const Skills = () => {
   return (
     <section className="skills-section" id="skills" ref={sectionRef}>
       <div className="skills-header">
-        <h2>
-          My Tech <span>Arsenal</span>
-        </h2>
+        <h2 className="skills-title">
+  My Tech <span className="gradient-text">Arsenal</span>
+</h2>
         <p>A showcase of the skills and tools driving my work</p>
       </div>
 
@@ -77,7 +77,7 @@ const Skills = () => {
     const centerY = rect.height / 2;
 
     const rotateX = (y - centerY) / 8;   // 🔥 smaller divisor = faster tilt
-    const rotateY = (centerX - x) / 8;
+    const rotateY = (centerX - x) / 8;  // 🔥 smaller divisor = faster tilt
 
     card.style.transform =
       `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.07)`;

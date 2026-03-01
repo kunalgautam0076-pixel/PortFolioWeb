@@ -12,3 +12,15 @@
 .section h2 {
   color: var(--text-color);
 }
+/* Remove default section underline */
+.about-title::after {
+  display: none !important;
+}
+
+/* Clean heading */
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}

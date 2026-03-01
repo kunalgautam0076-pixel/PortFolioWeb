@@ -11,11 +11,6 @@
   font-weight: 700;
 }
 
-.skills-header span {
-  background: linear-gradient(90deg, #00f5ff, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .skills-header p {
   margin-top: 15px;
@@ -183,4 +178,162 @@
 
 .skill-card p {
   color: var(--secondary-text);
+}
+.skill-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: 0.3s ease;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px var(--card-shadow);
+}
+
+.skill-card h3 {
+  color: var(--text-color);
+}
+.skills-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Gradient animated text */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #00f5ff,
+    #4facfe,
+    #9b5cff,
+    #00f5ff
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+[data-theme="light"] .gradient-text {
+  filter: brightness(0.8);
+}
+/* ===== Gradient Animated Text ===== */
+
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #00f5ff,
+    #4facfe,
+    #9b5cff,
+    #00f5ff
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 8s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+[data-theme="light"] .gradient-text {
+  filter: brightness(0.9);
+}
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #00f5ff,
+    #00bfff,
+    #9b5cff,
+    #ff00cc,
+    #00f5ff
+  );
+  background-size: 500% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0% center; }
+  100% { background-position: 500% center; }
+}
+/* ===== Section Title ===== */
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+/* ===== Animated Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #00f5ff,
+    #4facfe,
+    #9b5cff,
+    #00f5ff
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 6s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Shine Sweep */
+
+.skill-card {
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  transition: 0.2s ease;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px var(--card-shadow);
+}
+/* ===== CLEAN WORKING GRADIENT ===== */
+.gradient-text {
+  display: inline-block;
+
+  background: linear-gradient(
+    90deg,
+    #00f5ff,
+    #4facfe,
+    #9b5cff
+  );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }

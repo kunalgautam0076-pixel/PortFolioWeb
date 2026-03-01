@@ -290,3 +290,95 @@ body {
   );
   box-shadow: 0 15px 40px rgba(0, 245, 255, 0.08);
 }
+/* ================= LIGHT MODE ================= */
+:root {
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* ================= DARK MODE ================= */
+[data-theme="dark"] {
+  --card-bg: #0c1229;
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+}
+/* ===== Animated Gradient Text ===== */
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #00f5ff,
+    #4facfe,
+    #9b5cff,
+    #00f5ff
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Shine sweep effect */
+.section-title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  100% {
+    left: 120%;
+  }
+}
+
+/* Subtitle */
+.section-subtitle {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 50px;
+  font-size: 1rem;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+:root {
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.08);
+  --card-shadow: rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] {
+  --card-bg: #0c1229;
+  --card-border: rgba(255,255,255,0.06);
+  --card-shadow: rgba(0,0,0,0.4);
+}
